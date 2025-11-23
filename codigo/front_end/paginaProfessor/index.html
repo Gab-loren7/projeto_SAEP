@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Página do Professor</title>
+</head>
+
+<body>
+    <header>
+        <h1></h1> <!-- Mensagem de boas-vindas ao professor -->
+        <a href="../paginaLogin/index.html" target="_self"><button class="btn_sair">Sair</button></a>
+    </header>
+
+    <main>
+        <button class="btn_CadastrarTurma">Cadastrar Turma</button>
+    </main>
+</body>
+
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const prof = JSON.parse(localStorage.getItem('professorLogado'));
+        const h1 = document.querySelector('header h1');
+        if (h1) h1.textContent = 'Bem Vindo, Professor ' + (prof.nome);
+    });
+</script>

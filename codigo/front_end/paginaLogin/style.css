@@ -1,0 +1,73 @@
+* {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    height: 50px;
+    width: 100%;
+    /* border: 3px solid red; */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+form {
+ margin: auto;
+ height: 60vh;
+ min-width: 500px;
+ width: 50vw;
+ background-color: #f6f6f6;
+ border-radius: 30px;
+
+ display: block;
+ text-align: center;
+ align-items: center;
+}
+
+h1 { 
+    color: #333;
+    font-size: 42px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    margin-top: 40px;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 40px auto;
+    width: 60%;
+} .container-input input {
+    padding: 20px;
+    font-size: 16px;
+    outline: none;
+} .container-input input::placeholder {
+    color: #999;
+    text-align: center;
+}
+
+button {
+    height: 50px;
+    width: 50%;
+    font-size: 24px;
+    background-color: #006bde;
+    color: white;
+    border: none;
+    cursor: pointer;
+} button:hover {
+    background-color: #025fc3;
+}

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Página do Professor</title>
 </head>
 
@@ -15,15 +16,25 @@
     </header>
 
     <main>
+        <div class="espacador"></div>
         <button class="btn_CadastrarTurma">Cadastrar Turma</button>
+
+        <div class="espacador"></div>
+
+        <table id="tabela" class="tabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Turma</th>
+                    <th>Disciplina</th>
+                    <th>Horário</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas da tabela serão adicionadas dinamicamente -->
+            </tbody>
     </main>
 </body>
 
 </html>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const prof = JSON.parse(localStorage.getItem('professorLogado'));
-        const h1 = document.querySelector('header h1');
-        if (h1) h1.textContent = 'Bem Vindo, Professor(a) ' + (prof.nome);
-    });
-</script>

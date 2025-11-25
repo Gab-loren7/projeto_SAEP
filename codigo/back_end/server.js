@@ -9,7 +9,7 @@ app.use(express.json());
 
 // 🔹 Rota para o index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'paginaProfessor/index.html'));
 });
 
 //rota para teste dos parametros
@@ -24,13 +24,13 @@ app.get('/script.js', (req, res) => {
 
 // 🔹 Rota manual para o style.css (caso tenha)
 app.get('/style.css', (req, res) => {
-  res.sendFile(path.join(__dirname, 'style.css'));
+  res.sendFile(path.join(__dirname, 'paginaProfessor/style.css'));
 });
 
 // 🔹 REST: listar usuários
-app.get('/usuarios', async (req, res) => {
+app.get('/professor', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM usuarios ORDER BY id ASC');
+    const result = await pool.query('SELECT * FROM professor ORDER BY id ASC');
     res.json(result.rows);
   } catch (err) {
     res.status(500).send(err.message);
@@ -38,11 +38,11 @@ app.get('/usuarios', async (req, res) => {
 });
 
 // 🔹 CREATE
-app.post('/usuarios', async (req, res) => {
+app.post('/professor', async (req, res) => {
   const { nome, email, idade } = req.body;
   try {
     const result = await pool.query(
-      'INSERT INTO usuarios (nome, email, idade) VALUES ($1, $2, $3) RETURNING *',
+      'INSERT INTO professor (nome, email, idade) VALUES ($1, $2, $3) RETURNING *',
       [nome, email, idade]
     );
     res.json(result.rows[0]);
@@ -52,12 +52,12 @@ app.post('/usuarios', async (req, res) => {
 });
 
 // 🔹 UPDATE
-app.put('/usuarios/:id', async (req, res) => {
+app.put('/professor/:id', async (req, res) => {
   const { id } = req.params;
   const { nome, email, idade } = req.body;
   try {
     const result = await pool.query(
-      'UPDATE usuarios SET nome=$1, email=$2, idade=$3 WHERE id=$4 RETURNING *',
+      'UPDATE professor SET nome=$1, email=$2, idade=$3 WHERE id=$4 RETURNING *',
       [nome, email, idade, id]
     );
     res.json(result.rows[0]);

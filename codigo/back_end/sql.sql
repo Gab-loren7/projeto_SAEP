@@ -1,24 +1,26 @@
-DROP TABLE Professor;
-DROP TABLE Turmas;
-DROP TABLE Atividades;
+DROP TABLE professor;
+DROP TABLE turmas;
+DROP TABLE atividades;
 
-CREATE TABLE Professor (
+CREATE TABLE professor (
     idProfessor SERIAL PRIMARY KEY,
     nomeProfessor VARCHAR(150) not null,
     emailProfessor VARCHAR(200) not null,
     senhaProfessor VARCHAR(8) not null
 );
 
-CREATE TABLE Turmas (
+CREATE TABLE turmas (
     idTurma SERIAL PRIMARY KEY,
-    nomeTurma VARCHAR(150) not null
+    nomeTurma VARCHAR(150) not null,
+	disciplinaTurma VARCHAR(150) not null,
+	horarioTurma VARCHAR(150) TIME
 );
 
-CREATE TABLE Atividades (
+CREATE TABLE atividades (
     idAtividade SERIAL PRIMARY KEY,
     nomeAtividade VARCHAR(150) not null
 );
 
-SELECT * FROM Professor;
-SELECT * FROM Turmas;
-SELECT * FROM Atividades;
+SELECT * FROM professor;
+SELECT * FROM turmas;
+SELECT * FROM atividades;

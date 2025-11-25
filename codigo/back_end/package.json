@@ -5,5 +5,16 @@
     "express": "^5.1.0",
     "nodemon": "^3.1.11",
     "pg": "^8.16.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "back_end",
+  "version": "1.0.0",
+  "main": "db.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
